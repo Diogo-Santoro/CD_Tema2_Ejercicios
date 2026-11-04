@@ -1,19 +1,26 @@
-classDiagram
-    class Person{
-        <<abstract>>
-        -String name
-        -String age
+classDiagram 
+    class Empresa {
+
     }
-    class Company{
-      
+    class Persona{
+        - nombre: String
+        - edad: int  
     }
-    class Worker{
-        -int balance
-        
-    }
-    class Client{
-        -String address
+    class Empleado {
+        - sueldoBruto: double
     }
 
-    Person <|-- Worker
-    Person <|-- Client
+     class Cliente {
+      
+    }
+
+    class Directivo {
+
+    }
+
+    Persona <|-- Empleado
+    Persona <|-- Cliente
+    Empleado <|-- Directivo
+
+    Directivo "1" o-- "1.." Empleado : emplea 
+   
