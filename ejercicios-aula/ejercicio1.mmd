@@ -1,0 +1,19 @@
+classDiagram
+    class Person{
+        <<abstract>>
+        -String name
+        -String age
+    }
+    class Company{
+      
+    }
+    class Worker{
+        -int balance
+        
+    }
+    class Client{
+        -String address
+    }
+
+    Person <|-- Worker
+    Person <|-- Client

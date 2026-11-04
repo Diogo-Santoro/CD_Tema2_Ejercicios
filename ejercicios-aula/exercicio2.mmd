@@ -1,0 +1,36 @@
+classDiagram
+
+    class Biblioteca {
+        +MAXIMO_PRESTAMO: int$
+        +NUM_MAXIMO_LIBROS_PRESTADOS: int$
+    }
+
+    class Libro{
+        -nombre: String,
+        -tipo: TipoLibroEnum,
+        -editorial: String,
+        -ano: int
+    }
+
+    class Autor{
+        -nombre: String,
+        -nacionalidad: String,
+        -fechaNacimiento: Date
+    }
+
+    class Copia{
+        -id: int,
+        -estado: EstadoCopiaEnum
+    }
+
+    class Lector {
+        -diaMulta: Date,
+        -diaMultado: int
+    }
+
+    class Prestamo {
+
+    }
+
+    note for Copia "<strong>EstadoCopiaEnum</strong>PRESTADA<br>CON_ATRASO<br>EN_PREPARACION<br>"
+    note for Libro "<strong>TipoLibroEnum</strong>NOVELA<br>TEATRO<br>POESIA<br>ENSAYO"
