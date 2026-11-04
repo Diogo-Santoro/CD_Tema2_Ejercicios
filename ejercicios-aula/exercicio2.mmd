@@ -29,8 +29,17 @@ classDiagram
     }
 
     class Prestamo {
-
+        -fechaInicio: Date
+        -fechaDevolucion: Date
     }
 
     note for Copia "<strong>EstadoCopiaEnum</strong>PRESTADA<br>CON_ATRASO<br>EN_PREPARACION<br>"
     note for Libro "<strong>TipoLibroEnum</strong>NOVELA<br>TEATRO<br>POESIA<br>ENSAYO"
+
+    Libro "1:N" --* "1" Autor : Escribe
+    Copia --|> Libro
+    Libro "1" --* "1:N" Copia
+    Lector "1" --o "1:N" Prestamo
+    Copia "1" --o "1:N" Prestamo
+    Libro *-- Biblioteca
+    copia *-- Biblioteca

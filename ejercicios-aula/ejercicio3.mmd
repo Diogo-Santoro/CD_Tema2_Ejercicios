@@ -1,6 +1,7 @@
 classDiagram
     class Server {
-
+        -mensaje: String,
+        -longitud: String
     }
     class Computer {
         
@@ -9,6 +10,12 @@ classDiagram
 
     }
     class Hub {
+        num_puertos: int
+        
+    }
+    class NetworkCable {
 
     }
-    class CableDeRed
+
+    Computer "1:N" --> "1" Hub : connects to
+    Computer "1:N" --> "1:N" Server : connects to
